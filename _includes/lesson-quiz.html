@@ -1,0 +1,232 @@
+{% assign quiz = site.data.lesson_quizzes[page.permalink] %}
+{% if quiz and quiz.size > 0 %}
+{% assign quiz_id = page.permalink | slugify %}
+<section class="lesson-quiz" id="lesson-quiz-{{ quiz_id }}">
+  <script type="application/json" class="lesson-quiz-data">{{ quiz | jsonify }}</script>
+  <div class="lesson-quiz-header">
+    <i class="fas fa-circle-question"></i>
+    <h3>Check your understanding</h3>
+  </div>
+  <p class="lesson-quiz-sub">{{ quiz.size }} quick questions on this lesson. Pick an answer for each, then check your score.</p>
+  <form class="lesson-quiz-form"></form>
+  <div class="lesson-quiz-actions">
+    <button type="button" class="lesson-quiz-check-btn">Check answers</button>
+    <button type="button" class="lesson-quiz-retry-btn" style="display:none;">Try again</button>
+  </div>
+  <div class="lesson-quiz-result" aria-live="polite"></div>
+</section>
+
+<style>
+  .lesson-quiz {
+    margin-top: 48px;
+    padding: 24px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+  }
+
+  .lesson-quiz-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-quiz-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+  }
+
+  .lesson-quiz-header i {
+    color: #2563eb;
+  }
+
+  .lesson-quiz-sub {
+    margin: 6px 0 20px 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .lesson-quiz-question {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .lesson-quiz-question:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .lesson-quiz-question-text {
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  .lesson-quiz-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .lesson-quiz-option:hover {
+    background: #f0f0f0;
+  }
+
+  .lesson-quiz-option input {
+    margin-top: 4px;
+  }
+
+  .lesson-quiz-question.is-correct .lesson-quiz-option.was-selected {
+    background: #dcfce7;
+  }
+
+  .lesson-quiz-question.is-incorrect .lesson-quiz-option.was-selected {
+    background: #fee2e2;
+  }
+
+  .lesson-quiz-question.is-incorrect .lesson-quiz-option.is-answer {
+    background: #dcfce7;
+  }
+
+  .lesson-quiz-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .lesson-quiz-check-btn,
+  .lesson-quiz-retry-btn {
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .lesson-quiz-check-btn:hover,
+  .lesson-quiz-retry-btn:hover {
+    background: #1d4ed8;
+  }
+
+  .lesson-quiz-check-btn:disabled {
+    background: #d0d0d0;
+    color: #999;
+    cursor: not-allowed;
+  }
+
+  .lesson-quiz-result {
+    margin-top: 16px;
+    font-weight: 600;
+    color: #222;
+  }
+</style>
+
+<script>
+  (function () {
+    const section = document.getElementById('lesson-quiz-{{ quiz_id }}');
+    if (!section) return;
+
+    const questions = JSON.parse(section.querySelector('.lesson-quiz-data').textContent);
+    const form = section.querySelector('.lesson-quiz-form');
+    const checkBtn = section.querySelector('.lesson-quiz-check-btn');
+    const retryBtn = section.querySelector('.lesson-quiz-retry-btn');
+    const resultEl = section.querySelector('.lesson-quiz-result');
+
+    function shuffle(array) {
+      const copy = array.slice();
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function render() {
+      form.innerHTML = '';
+      resultEl.textContent = '';
+      checkBtn.disabled = false;
+      checkBtn.style.display = '';
+      retryBtn.style.display = 'none';
+
+      questions.forEach((question, qIndex) => {
+        const correctText = question.options[question.answer];
+        const shuffledOptions = shuffle(question.options);
+
+        const qDiv = document.createElement('div');
+        qDiv.className = 'lesson-quiz-question';
+        qDiv.dataset.correctText = correctText;
+
+        const qText = document.createElement('div');
+        qText.className = 'lesson-quiz-question-text';
+        qText.textContent = (qIndex + 1) + '. ' + question.q;
+        qDiv.appendChild(qText);
+
+        shuffledOptions.forEach((optionText, oIndex) => {
+          const label = document.createElement('label');
+          label.className = 'lesson-quiz-option';
+          label.dataset.optionText = optionText;
+
+          const input = document.createElement('input');
+          input.type = 'radio';
+          input.name = 'lesson-quiz-{{ quiz_id }}-q' + qIndex;
+          input.value = optionText;
+
+          const span = document.createElement('span');
+          span.textContent = optionText;
+
+          label.appendChild(input);
+          label.appendChild(span);
+          qDiv.appendChild(label);
+        });
+
+        form.appendChild(qDiv);
+      });
+    }
+
+    checkBtn.addEventListener('click', function () {
+      let score = 0;
+
+      form.querySelectorAll('.lesson-quiz-question').forEach((qDiv) => {
+        const selected = qDiv.querySelector('input:checked');
+        const correctText = qDiv.dataset.correctText;
+        const isCorrect = !!selected && selected.value === correctText;
+
+        if (isCorrect) score++;
+
+        qDiv.classList.remove('is-correct', 'is-incorrect');
+        qDiv.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+
+        qDiv.querySelectorAll('.lesson-quiz-option').forEach((label) => {
+          label.classList.remove('was-selected', 'is-answer');
+          if (selected && label.dataset.optionText === selected.value) {
+            label.classList.add('was-selected');
+          }
+          if (!isCorrect && label.dataset.optionText === correctText) {
+            label.classList.add('is-answer');
+          }
+        });
+
+        qDiv.querySelectorAll('input').forEach((input) => (input.disabled = true));
+      });
+
+      resultEl.textContent = 'Score: ' + score + ' / ' + questions.length;
+      checkBtn.style.display = 'none';
+      retryBtn.style.display = '';
+    });
+
+    retryBtn.addEventListener('click', render);
+
+    render();
+  })();
+</script>
+{% endif %}

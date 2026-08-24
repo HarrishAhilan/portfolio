@@ -1,0 +1,616 @@
+# 5-question interactive MCQ quiz shown at the end of each AP CSA lesson.
+# Keyed by the lesson's permalink (must match front matter `permalink:` exactly).
+# `answer` is the 0-based index into `options` for the correct choice.
+# _includes/lesson-quiz.html shuffles option order at render time.
+
+"/csa/unit_01/1_1":
+  - q: "What is an algorithm?"
+    options: ["A programming language", "An unambiguous, ordered sequence of steps for solving a problem", "A hardware component", "A type of syntax error"]
+    answer: 1
+  - q: "What does a compiler do?"
+    options: ["Runs the algorithm on paper", "Translates source code into a form the machine can execute", "Deletes unused variables", "Writes documentation automatically"]
+    answer: 1
+  - q: "Why does the order of steps in an algorithm matter?"
+    options: ["It doesn't, any order works", "The same steps in a different order can produce a different, possibly wrong, result", "Order only matters in Python", "Order only affects runtime, never correctness"]
+    answer: 1
+  - q: "Pseudocode is best described as:"
+    options: ["Compiled machine code", "An informal, human-readable outline of an algorithm's steps before writing real code", "A Java keyword", "A type of variable"]
+    answer: 1
+  - q: "A syntax error is:"
+    options: ["A logic mistake in the algorithm's steps", "A violation of the programming language's grammar rules that prevents compilation", "A runtime crash only", "Always caused by a missing algorithm"]
+    answer: 1
+
+"/csa/unit_01/1_2":
+  - q: "What does `final` do when placed before a variable's type?"
+    options: ["Makes it print automatically", "Turns it into a constant that cannot be reassigned after its first value", "Deletes it after use", "Converts it to a String"]
+    answer: 1
+  - q: "Which is a valid Java variable declaration?"
+    options: ["int 2value = 5;", "int value2 = 5;", "int value 2 = 5;", "2 int value = 5;"]
+    answer: 1
+  - q: "Which primitive type would you use to store 3.14?"
+    options: ["int", "boolean", "double", "char"]
+    answer: 2
+  - q: "A variable's type mainly determines:"
+    options: ["Its name", "What kind of value it can hold and how much memory it uses", "Whether it can be printed", "Its access modifier"]
+    answer: 1
+  - q: "What is stored in a boolean variable?"
+    options: ["A single character", "true or false", "A decimal number", "A whole number only"]
+    answer: 1
+
+"/csa/unit_01/1_3":
+  - q: "What does System.out.println(\"Hi\") do differently from System.out.print(\"Hi\")?"
+    options: ["Nothing, they're identical", "println adds a newline after printing, print does not", "print is faster", "println only works with numbers"]
+    answer: 1
+  - q: "What does the escape sequence \\n do inside a String?"
+    options: ["Prints a literal backslash and n", "Starts a new line", "Inserts a tab", "Ends the program"]
+    answer: 1
+  - q: "An expression in Java is:"
+    options: ["Only a println statement", "Any combination of values, variables, and operators that evaluates to a value", "A comment", "A class name"]
+    answer: 1
+  - q: "What does \\t produce in output?"
+    options: ["A new line", "A tab space", "A quotation mark", "Nothing"]
+    answer: 1
+  - q: "In a Scanner-based menu program, output statements are mainly used to:"
+    options: ["Read user input", "Display prompts and results to the user", "Compile the program", "Declare variables"]
+    answer: 1
+
+"/csa/unit_01/1_4":
+  - q: "Which Scanner method reads a full line of text, including spaces?"
+    options: ["nextInt()", "nextLine()", "next()", "nextDouble()"]
+    answer: 1
+  - q: "What is the purpose of Scanner in Java?"
+    options: ["To format output only", "To read input typed by the user from System.in", "To compile code", "To declare constants"]
+    answer: 1
+  - q: "Which method would you use to read a whole number the user types?"
+    options: ["nextInt()", "nextLine()", "nextChar()", "nextBoolean()"]
+    answer: 0
+  - q: "Without any form of input, a Java program can only:"
+    options: ["React unpredictably", "Operate on hardcoded data it already contains", "Crash immediately", "Skip compilation"]
+    answer: 1
+  - q: "In an assignment statement like int x = 5;, the = sign means:"
+    options: ["Mathematical equality check", "Store the value on the right into the variable on the left", "Compare two values", "Declare a method"]
+    answer: 1
+
+"/csa/unit_01/1_5":
+  - q: "What happens when you cast a double to an int?"
+    options: ["It rounds to the nearest integer", "It truncates the decimal part, which can lose information", "It throws a compile error always", "It converts to a String"]
+    answer: 1
+  - q: "Widening a value (e.g. int to double) happens:"
+    options: ["Only with an explicit cast", "Automatically, with no data lost", "Never in Java", "Only inside loops"]
+    answer: 1
+  - q: "What is the result of 7 / 2 in Java, where both are ints?"
+    options: ["3.5", "3", "4", "3.0"]
+    answer: 1
+  - q: "Narrowing a value (e.g. double to int) requires:"
+    options: ["Nothing special", "An explicit cast", "A try/catch block", "A Scanner"]
+    answer: 1
+  - q: "In a mixed-type expression like int + double, Java:"
+    options: ["Throws an error", "Promotes the result to the wider type (double) before evaluating", "Truncates the double first", "Ignores the double"]
+    answer: 1
+
+"/csa/unit_01/1_6":
+  - q: "What does x += 5; do?"
+    options: ["Compares x to 5", "Adds 5 to x and stores the result back in x", "Sets x equal to 5", "Divides x by 5"]
+    answer: 1
+  - q: "Which is equivalent to x = x * 2;?"
+    options: ["x *= 2;", "x += 2;", "x == 2;", "x -= 2;"]
+    answer: 0
+  - q: "Compound operators are mainly useful for:"
+    options: ["Declaring new variables", "Concisely updating a running total or counter", "Comparing two values", "Creating objects"]
+    answer: 1
+  - q: "What does x %= 3; do?"
+    options: ["Multiplies x by 3", "Sets x to the remainder of x divided by 3", "Subtracts 3 from x", "Sets x to 3"]
+    answer: 1
+  - q: "x -= 1; is shorthand for:"
+    options: ["x = 1 - x;", "x = x - 1;", "x = -1;", "x = x + 1;"]
+    answer: 1
+
+"/csa/unit_01/1_7":
+  - q: "What is a library in the context of Java?"
+    options: ["A single variable", "A collection of prewritten classes you can reuse in your own program", "A type of loop", "A syntax rule"]
+    answer: 1
+  - q: "What does API stand for?"
+    options: ["Applied Programming Instructions", "Application Program(ming) Interface", "Automated Program Index", "Array Processing Interface"]
+    answer: 1
+  - q: "An API's documentation mainly tells you:"
+    options: ["The internal source code line by line", "What a class's attributes and behaviors do, without needing to read the internals", "The compiler version used", "Nothing useful"]
+    answer: 1
+  - q: "Scanner and Math are examples of:"
+    options: ["User-defined classes only", "Classes provided by Java's standard library", "Primitive types", "Loops"]
+    answer: 1
+  - q: "Why do most real Java programs rely on existing libraries?"
+    options: ["It's required by the compiler", "It saves time by reusing tested, prewritten functionality instead of writing everything from scratch", "Libraries are mandatory for syntax", "They replace the need for variables"]
+    answer: 1
+
+"/csa/unit_01/1_8":
+  - q: "What is a precondition in Javadoc?"
+    options: ["What the method guarantees after running", "What the method expects to be true before it runs", "The method's return type", "A syntax error"]
+    answer: 1
+  - q: "What does the @param tag describe?"
+    options: ["The method's return value", "An input parameter the method accepts", "The class name", "A postcondition"]
+    answer: 1
+  - q: "A postcondition describes:"
+    options: ["What must be true before calling the method", "What the method guarantees is true after it finishes", "The method's parameters", "The compiler's behavior"]
+    answer: 1
+  - q: "Javadoc comments are written using:"
+    options: ["// at the start of each line", "/** ... */", "<!-- ... -->", "# at the start of each line"]
+    answer: 1
+  - q: "Why is documentation useful even when code seems self-explanatory?"
+    options: ["It's required for the code to compile", "It communicates intent, constraints, and usage to other developers (and your future self)", "It replaces the need for testing", "It slows down the compiler"]
+    answer: 1
+
+"/csa/unit_01/1_9":
+  - q: "A method's signature includes:"
+    options: ["Only its name", "Its name and the number/type of its parameters", "Only its return type", "Its comments"]
+    answer: 1
+  - q: "What is method overloading?"
+    options: ["Calling a method too many times", "Defining multiple methods with the same name but different parameter lists", "A runtime error", "A type of variable"]
+    answer: 1
+  - q: "Which of these could be a valid overload of max(int a, int b)?"
+    options: ["int max(int a, int b) (identical)", "double max(double a, double b)", "int max() returning a different type only", "None, overloading isn't allowed"]
+    answer: 1
+  - q: "Two methods with the same name and same parameter types but different return types:"
+    options: ["Is valid overloading", "Is NOT valid overloading and won't compile", "Always works fine", "Is required in Java"]
+    answer: 1
+  - q: "The return type of a method describes:"
+    options: ["Its parameter list", "The type of value the method sends back to the caller", "Its access modifier", "Its documentation"]
+    answer: 1
+
+"/csa/unit_01/1_10":
+  - q: "A static method belongs to:"
+    options: ["A specific object instance", "The class itself, not any one instance", "Nothing, static methods don't exist", "Only interfaces"]
+    answer: 1
+  - q: "How do you call a static method named compare in class Battle?"
+    options: ["new Battle().compare() only", "Battle.compare()", "compare.Battle()", "this.compare() only"]
+    answer: 1
+  - q: "Instance methods differ from static methods because instance methods:"
+    options: ["Can't take parameters", "Operate on a specific object's data", "Belong to the class, not an object", "Can't return values"]
+    answer: 1
+  - q: "Which keyword marks a method as static?"
+    options: ["final", "static", "void", "class"]
+    answer: 1
+  - q: "A static method can NOT directly access:"
+    options: ["Other static methods", "Instance (non-static) fields without an object reference", "Its own parameters", "Static fields"]
+    answer: 1
+
+"/csa/unit_01/1_11":
+  - q: "What does Math.abs(-7) return?"
+    options: ["-7", "7", "0", "An error"]
+    answer: 1
+  - q: "What does Math.pow(2, 3) return?"
+    options: ["6", "8", "5", "9"]
+    answer: 1
+  - q: "Math.sqrt(x) returns:"
+    options: ["x squared", "The square root of x", "The absolute value of x", "A random number"]
+    answer: 1
+  - q: "Math.max(a, b) returns:"
+    options: ["The smaller of a and b", "The larger of a and b", "Their sum", "Their difference"]
+    answer: 1
+  - q: "The Math class is an example of:"
+    options: ["An instance-based class you must instantiate", "A utility class made of static methods", "A primitive type", "A Scanner subclass"]
+    answer: 1
+
+"/csa/unit_01/1_12":
+  - q: "A class is best described as:"
+    options: ["A single value", "A blueprint that defines the structure and behavior objects created from it will have", "A loop construct", "A comment style"]
+    answer: 1
+  - q: "An object is:"
+    options: ["The same thing as a class", "An instance of a class, created using that class's blueprint", "A primitive type", "A method signature"]
+    answer: 1
+  - q: "If two variables reference the same object (aliasing), changing the object through one variable:"
+    options: ["Has no effect on the other", "Is visible through the other variable too, since both point to the same object", "Creates a new object automatically", "Causes a compile error"]
+    answer: 1
+  - q: "What keyword is used to create a new object in Java?"
+    options: ["class", "new", "static", "this"]
+    answer: 1
+  - q: "A class's attributes represent:"
+    options: ["Its methods only", "The data/state the object holds", "Its comments", "Its file name"]
+    answer: 1
+
+"/csa/unit_01/1_13":
+  - q: "Where are an object's instance variables actually stored in memory?"
+    options: ["The stack", "The heap", "The compiler cache", "Nowhere, they're recomputed each time"]
+    answer: 1
+  - q: "When a primitive variable is passed to a method and changed inside it:"
+    options: ["The original variable outside the method also changes", "The original variable is unaffected, since primitives are passed by value", "The program crashes", "It becomes an object"]
+    answer: 1
+  - q: "When an object reference is passed to a method and the object's field is changed inside it:"
+    options: ["The change is visible outside the method too, since the reference points to the same object", "The original object is never affected", "A new copy is always made", "It causes a compile error"]
+    answer: 0
+  - q: "What does new Car() actually do?"
+    options: ["Declares a variable only", "Allocates memory on the heap for a new Car object and runs its constructor", "Deletes the Car class", "Runs a static method"]
+    answer: 1
+  - q: "A reference variable stored on the stack:"
+    options: ["Contains the actual object data", "Points to (holds the address of) an object on the heap", "Is the same as the object itself", "Cannot be reassigned"]
+    answer: 1
+
+"/csa/unit_01/1_14":
+  - q: "An instance method can access:"
+    options: ["Only static fields", "The instance fields of the specific object it's called on", "Nothing", "Only parameters"]
+    answer: 1
+  - q: "How do you call an instance method bark() on an object myDog?"
+    options: ["Dog.bark()", "myDog.bark()", "bark.myDog()", "new bark()"]
+    answer: 1
+  - q: "A void method:"
+    options: ["Must return a value", "Does not return a value", "Cannot take parameters", "Is always static"]
+    answer: 1
+  - q: "A non-void method:"
+    options: ["Never has parameters", "Must return a value matching its declared return type", "Is the same as a void method", "Cannot be called on an object"]
+    answer: 1
+  - q: "Two different objects of the same class calling the same instance method:"
+    options: ["Always produce identical results regardless of their data", "Can produce different results since each operates on its own instance data", "Is not allowed", "Requires static methods instead"]
+    answer: 1
+
+"/csa/unit_01/1_15":
+  - q: "Which method returns the number of characters in a String s?"
+    options: ["s.size()", "s.length()", "s.count()", "s.chars()"]
+    answer: 1
+  - q: "What does s.substring(2, 5) return?"
+    options: ["Characters from index 2 up to (not including) index 5", "Characters 2 through 5 inclusive", "The character at index 2 only", "The whole string reversed"]
+    answer: 0
+  - q: "s.indexOf(\"a\") returns:"
+    options: ["The number of a's in the string", "The index of the first occurrence of \"a\", or -1 if not found", "Always 0", "A boolean"]
+    answer: 1
+  - q: "Strings in Java are:"
+    options: ["Mutable, like arrays", "Immutable, so methods like substring return a new String rather than modifying the original", "Primitives", "The same as char arrays with no differences"]
+    answer: 1
+  - q: "s.charAt(0) returns:"
+    options: ["The last character of s", "The first character of s", "The length of s", "A substring"]
+    answer: 1
+
+"/csa/unit_02/2_1":
+  - q: "Selection in an algorithm refers to:"
+    options: ["Choosing between different paths based on a condition (e.g. if/else)", "Repeating a step multiple times", "Declaring a variable", "Reading input"]
+    answer: 0
+  - q: "Repetition in an algorithm refers to:"
+    options: ["Branching based on a condition", "Repeating a set of steps, typically with a loop", "Casting a value", "Calling a static method"]
+    answer: 1
+  - q: "Combining selection and repetition lets an algorithm:"
+    options: ["Only run once, top to bottom", "Make decisions and repeat work, matching how most real programs actually behave", "Avoid using variables", "Skip compilation"]
+    answer: 1
+  - q: "A flowchart diamond shape typically represents:"
+    options: ["A loop body", "A decision/selection point", "An output statement", "A variable declaration"]
+    answer: 1
+  - q: "Which is an example of repetition in code?"
+    options: ["if (x > 0) {...}", "for (int i = 0; i < 10; i++) {...}", "int x = 5;", "System.out.println(x);"]
+    answer: 1
+
+"/csa/unit_02/2_2":
+  - q: "A boolean expression always evaluates to:"
+    options: ["A number", "true or false", "A String", "An object"]
+    answer: 1
+  - q: "What does 5 > 3 && 2 < 1 evaluate to?"
+    options: ["true", "false", "5", "An error"]
+    answer: 1
+  - q: "What does the ! operator do to a boolean value?"
+    options: ["Doubles it", "Reverses/negates it", "Squares it", "Nothing"]
+    answer: 1
+  - q: "x == 5 is a boolean expression that checks:"
+    options: ["Whether x is assigned the value 5", "Whether x is currently equal to 5", "Whether x is greater than 5", "Nothing, == is invalid"]
+    answer: 1
+  - q: "|| in a boolean expression means:"
+    options: ["AND, both sides must be true", "OR, at least one side must be true", "NOT", "Equals"]
+    answer: 1
+
+"/csa/unit_02/2_3":
+  - q: "An if statement's body runs:"
+    options: ["Always, no matter what", "Only when its boolean condition evaluates to true", "Only when the condition is false", "Exactly once regardless of the condition"]
+    answer: 1
+  - q: "What is the risk of writing = instead of == inside an if condition?"
+    options: ["None, they behave the same", "= assigns a value instead of comparing, which can change a variable unintentionally", "It becomes a loop", "It causes a syntax highlighting issue only"]
+    answer: 1
+  - q: "An if statement without a matching else that has a false condition:"
+    options: ["Throws an error", "Simply skips its body and continues with the rest of the program", "Runs the body anyway", "Repeats forever"]
+    answer: 1
+  - q: "if conditions must be:"
+    options: ["Integers", "Boolean expressions", "Strings", "Method calls only"]
+    answer: 1
+  - q: "Which correctly checks if age is at least 18?"
+    options: ["if (age = 18)", "if (age >= 18)", "if (age > 18 < 100)", "if age >= 18"]
+    answer: 1
+
+"/csa/unit_02/2_4":
+  - q: "A nested if statement is:"
+    options: ["An if statement inside the body of another if statement", "Two unrelated if statements in the same method", "An if statement with no condition", "A loop disguised as an if"]
+    answer: 0
+  - q: "Nested ifs are useful when:"
+    options: ["You need to check a second condition only after the first one is true", "You want to skip all conditions", "You never need more than one condition", "The program has no boolean logic"]
+    answer: 0
+  - q: "In a nested if, the inner if only runs when:"
+    options: ["The outer if's condition was false", "The outer if's condition was true", "Both are always evaluated independently", "Never"]
+    answer: 1
+  - q: "Deeply nested if statements can hurt code by:"
+    options: ["Improving readability", "Making the logic harder to read and trace", "Making the program faster", "Removing the need for boolean expressions"]
+    answer: 1
+  - q: "else if chains are an alternative to:"
+    options: ["Loops only", "Deeply nested if statements, when checking a series of mutually exclusive conditions", "Variables", "Method calls"]
+    answer: 1
+
+"/csa/unit_02/2_5":
+  - q: "&& requires:"
+    options: ["At least one side to be true", "Both sides to be true for the whole expression to be true", "Neither side to be true", "Exactly one side to be true"]
+    answer: 1
+  - q: "What does (x > 0) || (x < -10) check?"
+    options: ["x is both positive and less than -10", "x is positive OR x is less than -10 (at least one)", "x is always false", "x equals -10"]
+    answer: 1
+  - q: "Combining multiple conditions with && and || in one expression usually needs:"
+    options: ["No special care", "Parentheses to make the intended grouping/order clear", "A loop", "A separate class"]
+    answer: 1
+  - q: "!(x > 5) is logically equivalent to:"
+    options: ["x > 5", "x <= 5", "x == 5", "x < 5 && x > 5"]
+    answer: 1
+  - q: "Short-circuit evaluation for && means:"
+    options: ["Both sides are always evaluated no matter what", "If the left side is false, the right side isn't evaluated at all", "It always evaluates the right side first", "It causes a runtime error"]
+    answer: 1
+
+"/csa/unit_02/2_6":
+  - q: "5 == 5.0 in Java evaluates to:"
+    options: ["false, since types differ", "true, since the values are numerically equal", "A compile error", "Undefined"]
+    answer: 1
+  - q: "When comparing two String objects for equal content, you should use:"
+    options: ["==", ".equals()", "!=", ".compareTo() == 0 only"]
+    answer: 1
+  - q: "== on two object references checks:"
+    options: ["Whether their contents are equal", "Whether they point to the exact same object in memory", "Nothing meaningful", "Whether they're the same type only"]
+    answer: 1
+  - q: "De Morgan's-style equivalence: !(a && b) is the same as:"
+    options: ["!a && !b", "!a || !b", "a || b", "a && b"]
+    answer: 1
+  - q: "Comparing two boolean expressions with != returns true when:"
+    options: ["They evaluate to the same value", "They evaluate to different values (one true, one false)", "Both are true", "Both are false"]
+    answer: 1
+
+"/csa/unit_02/2_7":
+  - q: "A while loop repeats its body:"
+    options: ["Exactly once", "As long as its condition remains true", "A fixed number of times only", "Never"]
+    answer: 1
+  - q: "What causes an infinite while loop?"
+    options: ["The condition eventually becomes false", "The condition never becomes false because nothing inside the loop changes it", "Using a for loop instead", "Declaring too many variables"]
+    answer: 1
+  - q: "A while loop checks its condition:"
+    options: ["After running the body once", "Before each execution of the body, including the first", "Only at the very end of the program", "Never"]
+    answer: 1
+  - q: "To safely count from 1 to 5 with a while loop you need to:"
+    options: ["Never update the counter", "Increment the counter inside the loop body so the condition eventually becomes false", "Use a boolean instead of an int", "Avoid using a condition"]
+    answer: 1
+  - q: "A while(true) loop:"
+    options: ["Never runs", "Runs forever unless something inside it (like a break) stops it", "Runs exactly once", "Is a syntax error"]
+    answer: 1
+
+"/csa/unit_02/2_8":
+  - q: "A for loop's three parts, in order, are:"
+    options: ["condition; update; initialization", "initialization; condition; update", "update; initialization; condition", "There's only one part"]
+    answer: 1
+  - q: "for (int i = 0; i < 5; i++) runs its body:"
+    options: ["4 times", "5 times, with i = 0,1,2,3,4", "6 times", "Infinitely"]
+    answer: 1
+  - q: "for loops are typically preferred over while loops when:"
+    options: ["The number of iterations is unknown", "The number of iterations is known in advance", "You never need a counter", "You want to avoid using conditions"]
+    answer: 1
+  - q: "In for (int i = 0; i < n; i++), the i++ part runs:"
+    options: ["Before the loop starts, once", "After each iteration of the loop body", "Only if the condition is false", "Never"]
+    answer: 1
+  - q: "What does changing i < 5 to i <= 5 do to a loop starting at i=0?"
+    options: ["Nothing changes", "Adds one more iteration (i now also runs when i equals 5)", "Removes an iteration", "Causes an infinite loop"]
+    answer: 1
+
+"/csa/unit_02/2_9":
+  - q: "Combining if statements with a loop lets a program:"
+    options: ["Only repeat identical output", "Make a decision differently on each pass through the loop", "Avoid using variables entirely", "Skip the loop body"]
+    answer: 1
+  - q: "A common use of selection inside a loop is:"
+    options: ["Declaring the loop variable", "Filtering which items get processed based on a condition", "Ending the program immediately", "Removing the need for a condition"]
+    answer: 1
+  - q: "To find the maximum value while looping through a list, you typically:"
+    options: ["Ignore all but the last value", "Track a running \"max so far\" variable and update it with an if check each iteration", "Use no variables at all", "Always print every value instead"]
+    answer: 1
+  - q: "An algorithm that only uses selection with no repetition can:"
+    options: ["Process a variable-length list efficiently", "Only make a fixed, one-time decision, not repeat work across many items", "Loop indefinitely", "Never evaluate a boolean"]
+    answer: 1
+  - q: "Combining loops and conditionals safely still requires:"
+    options: ["Ignoring infinite loop risks", "Making sure the loop's condition will eventually become false", "Removing all if statements", "Avoiding counters"]
+    answer: 1
+
+"/csa/unit_02/2_10":
+  - q: "To check every character in a String, you typically loop from index:"
+    options: ["1 to length()", "0 to length() - 1", "0 to length()", "length() to 0"]
+    answer: 1
+  - q: "A common bug when looping over a String by index is:"
+    options: ["Using charAt at all", "An off-by-one error that goes one index past the last valid character", "Declaring the String", "Using a for loop"]
+    answer: 1
+  - q: "Counting vowels in a String typically requires:"
+    options: ["A single if statement with no loop", "Looping through each character and checking if it matches a vowel", "Only the length() method", "Only substring()"]
+    answer: 1
+  - q: "charAt(s.length()) on a String s:"
+    options: ["Returns the last character", "Throws an out-of-bounds error, since valid indices only go up to length()-1", "Returns an empty string", "Always returns a space"]
+    answer: 1
+  - q: "Reversing a String algorithmically typically involves:"
+    options: ["Calling a built-in reverse() method that always exists", "Building a new String by appending characters starting from the last index backward", "Using Math.abs()", "Casting to an int"]
+    answer: 1
+
+"/csa/unit_02/2_11":
+  - q: "A nested loop is:"
+    options: ["A loop that only runs once", "A loop placed inside the body of another loop", "Two loops that can never both exist in one method", "Only used for Strings"]
+    answer: 1
+  - q: "For an outer loop running 3 times and an inner loop running 4 times each pass, the inner loop's body runs in total:"
+    options: ["3 times", "4 times", "12 times", "7 times"]
+    answer: 2
+  - q: "Nested loops are commonly used to process:"
+    options: ["A single value", "2D structures, like a grid or table, row by row and column by column", "Only boolean values", "Only Strings"]
+    answer: 1
+  - q: "In a nested loop, the inner loop completes:"
+    options: ["Once total, regardless of the outer loop", "Fully, once per single pass of the outer loop", "Before the outer loop starts", "Never, if the outer loop runs"]
+    answer: 1
+  - q: "Predicting a nested loop's total iteration count generally means:"
+    options: ["Just reading the outer loop's bound", "Multiplying the number of outer iterations by the number of inner iterations per pass", "Adding the two bounds together", "Ignoring the inner loop entirely"]
+    answer: 1
+
+"/csa/unit_02/2_12":
+  - q: "A single loop that runs n times, doing constant work each time, has a run time that grows:"
+    options: ["Not at all as n grows", "Roughly proportional to n (linear)", "Proportional to n squared", "Instantly, regardless of n"]
+    answer: 1
+  - q: "A loop nested inside another loop, both running n times, has a run time that grows roughly:"
+    options: ["Linearly with n", "Proportional to n squared", "Not at all", "Proportional to log(n)"]
+    answer: 1
+  - q: "Informal run-time analysis mainly asks:"
+    options: ["How many lines of code a program has", "Roughly how the number of operations grows as the input size grows", "What the variable names are", "How the program is documented"]
+    answer: 1
+  - q: "Doubling the loop bound n in a single loop roughly:"
+    options: ["Quadruples the work", "Doubles the amount of work done", "Has no effect", "Halves the work"]
+    answer: 1
+  - q: "Which generally does less total work for large n: one loop running n times, or two nested loops each running n times?"
+    options: ["They always do the same work", "The single loop, since nested loops multiply the iteration count", "The nested loops always do less", "It's impossible to compare"]
+    answer: 1
+
+"/csa/unit_03/3_1":
+  - q: "Abstraction in programming means:"
+    options: ["Making code as complicated as possible", "Hiding implementation details and exposing only what's necessary to use something", "Removing all comments", "Writing everything in one method"]
+    answer: 1
+  - q: "A class's public methods represent:"
+    options: ["Its hidden internal details", "The interface other code uses to interact with it, without needing to know how it works internally", "Its private fields", "Its comments"]
+    answer: 1
+  - q: "Good program design generally favors:"
+    options: ["One giant method that does everything", "Breaking a problem into smaller, well-defined classes and methods", "Avoiding all classes", "Ignoring naming conventions"]
+    answer: 1
+  - q: "Abstraction helps programmers manage complexity by:"
+    options: ["Forcing every detail to be visible everywhere", "Letting you use a component without needing to understand its full internal implementation", "Removing the need for testing", "Requiring more code duplication"]
+    answer: 1
+  - q: "An example of abstraction you already use is:"
+    options: ["Writing your own sorting algorithm from scratch every time", "Calling Arrays.sort() without knowing exactly how it's implemented internally", "Reading every line of the Java standard library source", "Avoiding libraries entirely"]
+    answer: 1
+
+"/csa/unit_03/3_2":
+  - q: "A well-designed class typically has:"
+    options: ["All fields public and directly modifiable from anywhere", "A clear, focused responsibility and controlled access to its data", "No methods at all", "As many responsibilities as possible crammed in"]
+    answer: 1
+  - q: "Poor program design most directly makes code harder to:"
+    options: ["Compile only", "Maintain, extend, and debug over time", "Run at all", "Name"]
+    answer: 1
+  - q: "Reusability in program design refers to:"
+    options: ["Writing a class so specific it can only be used in one exact spot", "Designing a class or method so it can be used in multiple contexts without rewriting it", "Never reusing any code", "Copy-pasting code between files"]
+    answer: 1
+  - q: "Choosing meaningful class and method names mainly improves:"
+    options: ["Runtime speed", "Readability and maintainability for anyone reading the code later", "Compiler behavior", "Memory usage"]
+    answer: 1
+  - q: "Splitting a large program into multiple well-defined classes generally:"
+    options: ["Makes it harder to test", "Makes each piece easier to understand, test, and modify independently", "Prevents the program from compiling", "Has no real benefit"]
+    answer: 1
+
+"/csa/unit_03/3_3":
+  - q: "A typical Java class definition includes:"
+    options: ["Only a class name, nothing else", "Fields (attributes), a constructor, and methods", "Only methods, never fields", "Only comments"]
+    answer: 1
+  - q: "Instantiating a class means:"
+    options: ["Deleting it", "Creating an object (instance) from it using new", "Compiling it", "Documenting it"]
+    answer: 1
+  - q: "Calling a method on an object is done using:"
+    options: ["The class name and a comma", "Dot notation: object.method()", "Square brackets", "The new keyword"]
+    answer: 1
+  - q: "A mutation in the context of a class refers to:"
+    options: ["A syntax error", "Changing an object's internal state/fields after it's created", "Deleting the class", "Creating a brand-new unrelated object"]
+    answer: 1
+  - q: "The fields of a class represent:"
+    options: ["Its methods", "The data each object created from that class will hold", "Its comments", "Its file path"]
+    answer: 1
+
+"/csa/unit_03/3_4":
+  - q: "A constructor's main job is to:"
+    options: ["Delete an object", "Initialize a newly created object's fields", "Compile the class", "Print output automatically"]
+    answer: 1
+  - q: "A constructor's name must:"
+    options: ["Start with lowercase", "Exactly match the class name", "Be main", "Include the word \"constructor\""]
+    answer: 1
+  - q: "What return type does a constructor have?"
+    options: ["void", "None at all, not even void", "int", "It depends on the class"]
+    answer: 1
+  - q: "If you don't write any constructor for a class, Java:"
+    options: ["Refuses to compile the class", "Provides a default no-argument constructor automatically", "Deletes the class", "Requires a static method instead"]
+    answer: 1
+  - q: "A constructor that takes parameters allows you to:"
+    options: ["Create objects with custom initial values", "Prevent any object creation", "Avoid using new", "Skip defining fields"]
+    answer: 0
+
+"/csa/unit_03/3_5":
+  - q: "A method's declaration typically includes, in order:"
+    options: ["Body, name, parameters", "Access modifier, return type, name, and parameter list", "Only a name", "Only a return statement"]
+    answer: 1
+  - q: "A void method:"
+    options: ["Must include a return statement with a value", "Does not return a value, though it may still contain a bare return; to exit early", "Cannot have parameters", "Is always static"]
+    answer: 1
+  - q: "A method's parameters are:"
+    options: ["Values it returns", "Inputs the method receives when it's called", "Comments describing the method", "Its access modifier"]
+    answer: 1
+  - q: "Writing a method with a clear, single responsibility mainly helps:"
+    options: ["Runtime speed only", "Readability, reuse, and easier debugging", "The compiler run faster", "Reduce the number of classes needed"]
+    answer: 1
+  - q: "If a method is declared to return int, it must:"
+    options: ["Never actually return anything", "Return an int value on every possible execution path", "Return a String instead", "Be static"]
+    answer: 1
+
+"/csa/unit_03/3_6":
+  - q: "When an object is passed as a method argument, the method receives:"
+    options: ["A full independent copy of the object", "A copy of the reference, which still points to the same object in memory", "Nothing, objects can't be passed", "Only the object's class name"]
+    answer: 1
+  - q: "If a method modifies a field of an object passed into it, that change:"
+    options: ["Is only visible inside the method", "Is visible to the caller too, since both reference the same object", "Creates a brand-new object automatically", "Causes a compile error"]
+    answer: 1
+  - q: "A method that returns an object reference gives the caller:"
+    options: ["A brand-new unrelated object always", "Access to the same object the method created or was working with", "Nothing usable", "Only a boolean"]
+    answer: 1
+  - q: "Reassigning the local parameter variable inside a method (e.g. obj = new Thing();):"
+    options: ["Changes what the caller's original variable points to", "Only changes the local copy of the reference, not the caller's variable", "Deletes the original object", "Is not allowed in Java"]
+    answer: 1
+  - q: "This behavior (copying the reference, not the object) is why Java is often described as:"
+    options: ["Pass-by-reference for everything", "Pass-by-value, even for object references", "Pass-by-name", "Not consistent at all"]
+    answer: 1
+
+"/csa/unit_03/3_7":
+  - q: "A static variable is:"
+    options: ["Unique to each object", "Shared across all instances of the class", "Not allowed in Java", "The same as a local variable"]
+    answer: 1
+  - q: "If you change a static variable through one object, other objects of the same class see:"
+    options: ["No change, each object has its own copy", "The updated value too, since it's shared", "A compile error", "The old value only"]
+    answer: 1
+  - q: "A static method can be called:"
+    options: ["Only through an object instance", "Directly through the class name, without creating an object", "Only from main()", "Never"]
+    answer: 1
+  - q: "A good use case for a static variable is:"
+    options: ["An individual object's unique name", "A shared counter tracking how many objects have been created", "A one-time local calculation", "A method's return value"]
+    answer: 1
+  - q: "Static members belong to:"
+    options: ["Each individual object separately", "The class as a whole", "Nothing, they're deleted after use", "Only the constructor"]
+    answer: 1
+
+"/csa/unit_03/3_8":
+  - q: "A variable declared inside a method (local variable) is accessible:"
+    options: ["Everywhere in the class", "Only within that method", "From any other class", "Only after the program ends"]
+    answer: 1
+  - q: "The private access modifier means a field or method is accessible:"
+    options: ["From any class", "Only within the class it's declared in", "Only from static methods", "From every subclass automatically"]
+    answer: 1
+  - q: "The public access modifier means:"
+    options: ["It's only accessible within the same class", "It's accessible from any other class", "It's deleted after compilation", "It must be static"]
+    answer: 1
+  - q: "Encapsulating fields as private and exposing them through public getter/setter methods mainly helps:"
+    options: ["Nothing, it's just a convention", "Control how the data is accessed and modified from outside the class", "Make the class run slower", "Prevent the class from being instantiated"]
+    answer: 1
+  - q: "A variable's scope refers to:"
+    options: ["Its data type", "The region of code where that variable can be referenced", "Its initial value", "Whether it's static"]
+    answer: 1
+
+"/csa/unit_03/3_9":
+  - q: "Inside an instance method, this refers to:"
+    options: ["The class itself", "The specific object the method was called on", "A static variable", "Nothing, it's unused in Java"]
+    answer: 1
+  - q: "this is commonly used in a constructor to:"
+    options: ["Delete a field", "Distinguish an instance field from a parameter with the same name", "Call a static method", "Declare a new class"]
+    answer: 1
+  - q: "In this.name = name;, the left this.name refers to:"
+    options: ["The parameter", "The object's own field", "A local variable", "A static field"]
+    answer: 1
+  - q: "Can this be used inside a static method?"
+    options: ["Yes, always", "No, since static methods aren't tied to any specific object instance", "Only in constructors", "Only with private methods"]
+    answer: 1
+  - q: "this() (with parentheses, inside a constructor) is used to:"
+    options: ["Call another constructor in the same class", "Call a method named this", "Declare a new field", "Exit the constructor early"]
+    answer: 0
