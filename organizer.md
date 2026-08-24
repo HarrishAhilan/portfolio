@@ -10,7 +10,7 @@
 4. Click a lesson's checkbox in the preview to mark it done. VS Code saves that change back into this file automatically, no need to edit the raw markdown.
 5. Click "description" under a lesson for a short recap of what it covers, without reopening the notebook.
 
-### Legend
+### LegendV
 
 | Status | Meaning |
 |---|---|

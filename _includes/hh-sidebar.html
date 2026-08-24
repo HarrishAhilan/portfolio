@@ -1,0 +1,246 @@
+{% assign cur = page.permalink %}
+<style>
+.hh-sb-toggle {
+  position: fixed;
+  top: 90px;
+  left: 14px;
+  z-index: 10001;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--hh-border, #2a3350);
+  background: var(--hh-card, #161c2c);
+  color: var(--hh-text, #e9edf5);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: left 0.25s ease, border-color 0.2s ease;
+}
+
+.hh-sb-toggle:hover {
+  border-color: var(--hh-cyan, #22d3ee);
+}
+
+.hh-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 272px;
+  overflow-y: auto;
+  z-index: 10000;
+  padding: 84px 0 24px 0;
+  background: linear-gradient(180deg, #0a0f1c 0%, #0e1526 55%, #0a0f1c 100%);
+  border-right: 1px solid var(--hh-border, #2a3350);
+  font-family: var(--hh-font, 'Calibri', 'Lato', sans-serif);
+  transition: transform 0.25s ease;
+}
+
+.hh-sidebar.hh-sb-closed {
+  transform: translateX(-100%);
+}
+
+.hh-sb-title {
+  padding: 0 20px 14px 20px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--hh-muted, #9aa5bd);
+  border-bottom: 1px solid var(--hh-border, #2a3350);
+  margin-bottom: 10px;
+}
+
+.hh-sb-unit {
+  margin: 0 12px 8px 12px;
+  border: 1px solid var(--hh-border, #2a3350);
+  border-radius: 10px;
+  background: var(--hh-card, #161c2c);
+  overflow: hidden;
+}
+
+.hh-sb-unit > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--hh-text, #e9edf5);
+}
+
+.hh-sb-unit > summary::-webkit-details-marker { display: none; }
+
+.hh-sb-unit > summary::after {
+  content: "▸";
+  color: var(--hh-muted, #9aa5bd);
+  transition: transform 0.2s ease;
+  font-family: sans-serif;
+  flex: none;
+  margin-left: 8px;
+}
+
+.hh-sb-unit[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+.hh-sb-unit[open] > summary {
+  border-bottom: 1px solid var(--hh-border, #2a3350);
+}
+
+.hh-sb-links {
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+}
+
+.hh-sb-link {
+  text-decoration: none;
+  color: #c9d2e5;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  line-height: 1.3;
+  transition: all 0.15s ease;
+}
+
+.hh-sb-link:hover {
+  background: rgba(34,211,238,0.08);
+  color: var(--hh-text, #e9edf5);
+}
+
+.hh-sb-link.hh-sb-active {
+  background: rgba(34,211,238,0.14);
+  color: var(--hh-cyan, #22d3ee);
+  font-weight: 700;
+  box-shadow: inset 2px 0 0 var(--hh-cyan, #22d3ee);
+}
+
+.hh-sb-quiz {
+  border-top: 1px dashed var(--hh-border, #2a3350);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+@media (min-width: 901px) {
+  body.hh-sb-has-sidebar main.page-content {
+    margin-left: 272px;
+    transition: margin-left 0.25s ease;
+  }
+  body.hh-sb-collapsed main.page-content {
+    margin-left: 0;
+  }
+  body.hh-sb-collapsed .hh-sb-toggle {
+    left: 14px;
+  }
+  body:not(.hh-sb-collapsed) .hh-sb-toggle {
+    left: 286px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hh-sidebar { transform: translateX(-100%); }
+  .hh-sidebar.hh-sb-open { transform: translateX(0); }
+}
+</style>
+
+<button class="hh-sb-toggle" id="hhSbToggle" type="button" title="Toggle unit navigation">☰</button>
+
+<nav class="hh-sidebar" id="hhSidebar">
+  <div class="hh-sb-title">AP CSA Units</div>
+
+  <details class="hh-sb-unit" {% if cur contains '/csa/unit_01' %}open{% endif %}>
+    <summary>Unit 1 · Primitive Types</summary>
+    <div class="hh-sb-links">
+      <a href="{{site.baseurl}}/csa/unit_01/1_1" class="hh-sb-link{% if cur == '/csa/unit_01/1_1' %} hh-sb-active{% endif %}">1.1 · Intro to Algorithms & Compilers</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_2" class="hh-sb-link{% if cur == '/csa/unit_01/1_2' %} hh-sb-active{% endif %}">1.2 · Variables and Data Types</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_3" class="hh-sb-link{% if cur == '/csa/unit_01/1_3' %} hh-sb-active{% endif %}">1.3 · Expressions and Output</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_4" class="hh-sb-link{% if cur == '/csa/unit_01/1_4' %} hh-sb-active{% endif %}">1.4 · Assignment & Input</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_5" class="hh-sb-link{% if cur == '/csa/unit_01/1_5' %} hh-sb-active{% endif %}">1.5 · Casting and Ranges</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_6" class="hh-sb-link{% if cur == '/csa/unit_01/1_6' %} hh-sb-active{% endif %}">1.6 · Compound Assignment Ops</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_7" class="hh-sb-link{% if cur == '/csa/unit_01/1_7' %} hh-sb-active{% endif %}">1.7 · APIs and Libraries</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_8" class="hh-sb-link{% if cur == '/csa/unit_01/1_8' %} hh-sb-active{% endif %}">1.8 · Documentation with Comments</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_9" class="hh-sb-link{% if cur == '/csa/unit_01/1_9' %} hh-sb-active{% endif %}">1.9 · Method Signatures</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_10" class="hh-sb-link{% if cur == '/csa/unit_01/1_10' %} hh-sb-active{% endif %}">1.10 · Calling Class Methods</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_11" class="hh-sb-link{% if cur == '/csa/unit_01/1_11' %} hh-sb-active{% endif %}">1.11 · Math Class</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_12" class="hh-sb-link{% if cur == '/csa/unit_01/1_12' %} hh-sb-active{% endif %}">1.12 · Classes & Objects</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_13" class="hh-sb-link{% if cur == '/csa/unit_01/1_13' %} hh-sb-active{% endif %}">1.13 · Object Creation & Storage</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_14" class="hh-sb-link{% if cur == '/csa/unit_01/1_14' %} hh-sb-active{% endif %}">1.14 · Calling Instance Methods</a>
+      <a href="{{site.baseurl}}/csa/unit_01/1_15" class="hh-sb-link{% if cur == '/csa/unit_01/1_15' %} hh-sb-active{% endif %}">1.15 · String Manipulation</a>
+      <a href="{{site.baseurl}}/csa/unit_01/quiz" class="hh-sb-link hh-sb-quiz{% if cur == '/csa/unit_01/quiz' %} hh-sb-active{% endif %}">📝 Unit 1 Quiz</a>
+    </div>
+  </details>
+
+  <details class="hh-sb-unit" {% if cur contains '/csa/unit_02' %}open{% endif %}>
+    <summary>Unit 2 · Selection & Iteration</summary>
+    <div class="hh-sb-links">
+      <a href="{{site.baseurl}}/csa/unit_02/2_3" class="hh-sb-link{% if cur == '/csa/unit_02/2_3' %} hh-sb-active{% endif %}">2.3 · if Statements</a>
+      <a href="{{site.baseurl}}/csa/unit_02/2_4" class="hh-sb-link{% if cur == '/csa/unit_02/2_4' %} hh-sb-active{% endif %}">2.4 · Nested if Statements</a>
+      <a href="{{site.baseurl}}/csa/unit_02/2_7" class="hh-sb-link{% if cur == '/csa/unit_02/2_7' %} hh-sb-active{% endif %}">2.7 · while Loops</a>
+      <a href="{{site.baseurl}}/csa/unit_02/2_8" class="hh-sb-link{% if cur == '/csa/unit_02/2_8' %} hh-sb-active{% endif %}">2.8 · for Loops</a>
+      <a href="{{site.baseurl}}/csa/unit_02/2_10" class="hh-sb-link{% if cur == '/csa/unit_02/2_10' %} hh-sb-active{% endif %}">2.10 · String Algorithms</a>
+      <a href="{{site.baseurl}}/csa/unit_02/2_11" class="hh-sb-link{% if cur == '/csa/unit_02/2_11' %} hh-sb-active{% endif %}">2.11 · Nested Iteration</a>
+      <a href="{{site.baseurl}}/csa/unit_02/2_12" class="hh-sb-link{% if cur == '/csa/unit_02/2_12' %} hh-sb-active{% endif %}">2.12 · Informal Run-Time Analysis</a>
+    </div>
+  </details>
+
+  <details class="hh-sb-unit" {% if cur contains '/csa/unit_03' %}open{% endif %}>
+    <summary>Unit 3 · Classes</summary>
+    <div class="hh-sb-links">
+      <a href="{{site.baseurl}}/csa/unit_03/3_3" class="hh-sb-link{% if cur == '/csa/unit_03/3_3' %} hh-sb-active{% endif %}">3.3 · Anatomy of a Class</a>
+      <a href="{{site.baseurl}}/csa/unit_03/3_5" class="hh-sb-link{% if cur == '/csa/unit_03/3_5' %} hh-sb-active{% endif %}">3.5 · Writing Methods</a>
+      <a href="{{site.baseurl}}/csa/unit_03/3_9" class="hh-sb-link{% if cur == '/csa/unit_03/3_9' %} hh-sb-active{% endif %}">3.9 · this Keyword</a>
+    </div>
+  </details>
+
+  <details class="hh-sb-unit" {% if cur contains '/csa/unit_04' %}open{% endif %}>
+    <summary>Unit 4 · Arrays</summary>
+    <div class="hh-sb-links">
+      <a href="{{site.baseurl}}/csa/unit_04/4_3" class="hh-sb-link{% if cur == '/csa/unit_04/4_3' %} hh-sb-active{% endif %}">4.3 · Array Creation and Access</a>
+      <a href="{{site.baseurl}}/csa/unit_04/4_4" class="hh-sb-link{% if cur == '/csa/unit_04/4_4' %} hh-sb-active{% endif %}">4.4 · Array Traversals</a>
+      <a href="{{site.baseurl}}/csa/unit_04/4_8" class="hh-sb-link{% if cur == '/csa/unit_04/4_8' %} hh-sb-active{% endif %}">4.8 · ArrayList Methods</a>
+      <a href="{{site.baseurl}}/csa/unit_04/4_9" class="hh-sb-link{% if cur == '/csa/unit_04/4_9' %} hh-sb-active{% endif %}">4.9 · ArrayList Traversals</a>
+      <a href="{{site.baseurl}}/csa/unit_04/4_11" class="hh-sb-link{% if cur == '/csa/unit_04/4_11' %} hh-sb-active{% endif %}">4.11 · 2D Array Creation & Access</a>
+      <a href="{{site.baseurl}}/csa/unit_04/4_12" class="hh-sb-link{% if cur == '/csa/unit_04/4_12' %} hh-sb-active{% endif %}">4.12 · 2D Array Traversals</a>
+    </div>
+  </details>
+</nav>
+
+<script>
+(function () {
+  var COLLAPSE_KEY = "hh_sidebar_collapsed";
+  var body = document.body;
+  var sidebar = document.getElementById("hhSidebar");
+  var toggle = document.getElementById("hhSbToggle");
+  if (!sidebar || !toggle) return;
+
+  body.classList.add("hh-sb-has-sidebar");
+
+  var isMobile = window.matchMedia("(max-width: 900px)").matches;
+  var collapsed = false;
+  try { collapsed = localStorage.getItem(COLLAPSE_KEY) === "1"; } catch (e) {}
+
+  if (isMobile) {
+    sidebar.classList.remove("hh-sb-open");
+  } else if (collapsed) {
+    body.classList.add("hh-sb-collapsed");
+    sidebar.classList.add("hh-sb-closed");
+  }
+
+  toggle.addEventListener("click", function () {
+    var mobileNow = window.matchMedia("(max-width: 900px)").matches;
+    if (mobileNow) {
+      sidebar.classList.toggle("hh-sb-open");
+    } else {
+      var nowClosed = sidebar.classList.toggle("hh-sb-closed");
+      body.classList.toggle("hh-sb-collapsed", nowClosed);
+      try { localStorage.setItem(COLLAPSE_KEY, nowClosed ? "1" : "0"); } catch (e) {}
+    }
+  });
+})();
+</script>
