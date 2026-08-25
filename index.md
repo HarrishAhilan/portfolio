@@ -15,6 +15,11 @@ show_reading_time: false
 </div>
 
 <div class="hh-section">
+  <h3 class="hh-heading">About Me</h3>
+  <p class="hh-desc">Hi, I'm Harrish! I'm currently learning programming and building out this portfolio as I go. Check out my progress on <a href="https://github.com/HarrishAhilan">GitHub</a>.</p>
+</div>
+
+<div class="hh-section">
   <h3 class="hh-heading">Development Environment</h3>
   <p class="hh-desc">Coding starts with tools, explore these tools and procedures with a click.</p>
   <div class="hh-row">
@@ -119,7 +124,14 @@ show_reading_time: false
       <span>Node / npm</span><span>24.19.0 / 11.17.0</span>
       <span>Jupyter kernels</span><span>python3, java</span>
     </div>
-    <img src="{{site.baseurl}}/images/tools_setup.png" alt="Terminal output showing Ruby, Python, Java, Node, and Jupyter kernel versions" class="hh-shot">
+  </div>
+</div>
+
+<div class="hh-section">
+  <h3 class="hh-heading">Helping CSSE Classmates</h3>
+  <p class="hh-desc">Helped out some CSSE classmates get their own dev environments set up, walking them through the same tools setup process above.</p>
+  <div class="hh-panel">
+    <img src="{{site.baseurl}}/screenshots/csse_team_photo.png" alt="Group photo with CSSE classmates after helping them set up their tools" class="hh-shot">
   </div>
 </div>
 
