@@ -16,7 +16,10 @@ show_reading_time: false
 
 <div class="hh-section">
   <h3 class="hh-heading">About Me</h3>
-  <p class="hh-desc">Hi, I'm Harrish! I'm currently learning programming and building out this portfolio as I go. Check out my progress on <a href="https://github.com/HarrishAhilan">GitHub</a>.</p>
+  <div class="hh-row" style="align-items: center; gap: 1.5rem;">
+    <div class="hh-avatar-placeholder">Your photo here</div>
+    <p class="hh-desc">My name is Harrish Ahilan. I'm here to learn how to code. I'm proficient in Python and teamwork, and I'm eager to learn more! Check out my progress on <a href="https://github.com/HarrishAhilan">GitHub</a>.</p>
+  </div>
 </div>
 
 <div class="hh-section">
