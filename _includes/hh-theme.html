@@ -220,6 +220,35 @@ html, body {
   border: 1px solid var(--hh-border);
 }
 
+.hh-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.hh-fact-card {
+  background: var(--hh-card);
+  border: 1px solid var(--hh-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hh-fact-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.hh-fact-caption {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--hh-text);
+  line-height: 1.4;
+}
+
 .hh-avatar-placeholder {
   width: 120px;
   height: 120px;

@@ -17,15 +17,34 @@ show_reading_time: false
 <div class="hh-section">
   <h3 class="hh-heading">About Me</h3>
   <div class="hh-row" style="align-items: center; gap: 1.5rem;">
-    <div class="hh-avatar-placeholder">Your photo here</div>
+    <div class="hh-avatar-placeholder"><img src="{{site.baseurl}}/images/harrish/headshot.jpg" alt="Headshot of Harrish Ahilan"></div>
     <div>
-      <p class="hh-desc">My name is Harrish Ahilan. I'm here to learn how to code. I'm proficient in Python and teamwork, and I'm eager to learn more!</p>
+      <p class="hh-desc">Hi! I'm a junior at Del Norte High School with a strong passion for Computer Science, always eager to expand my knowledge and skills in AP Computer Science A.</p>
       <a href="https://github.com/HarrishAhilan" class="hh-pill" target="_blank">
         <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
         </svg>
         View my GitHub
       </a>
+    </div>
+  </div>
+</div>
+
+<div class="hh-section">
+  <h3 class="hh-heading">Some Cool Fun Facts About Me</h3>
+  <p class="hh-desc">A few things I love outside of the classroom.</p>
+  <div class="hh-facts-grid">
+    <div class="hh-fact-card">
+      <img src="{{site.baseurl}}/images/harrish/fact-basketball-photography.jpg" alt="Harrish shooting a basketball on an outdoor court at night" class="hh-fact-img">
+      <p class="hh-fact-caption">I like playing basketball!</p>
+    </div>
+    <div class="hh-fact-card">
+      <img src="{{site.baseurl}}/images/harrish/fact-engineering.jpg" alt="Harrish taking a photo in front of a hand-lettered poster" class="hh-fact-img">
+      <p class="hh-fact-caption">I am interested in photography!</p>
+    </div>
+    <div class="hh-fact-card">
+      <img src="{{site.baseurl}}/images/harrish/fact-robotics.jpg" alt="Harrish assembling a robot for an FRC robotics competition" class="hh-fact-img">
+      <p class="hh-fact-caption">I love building robots for FRC robotics!</p>
     </div>
   </div>
 </div>
